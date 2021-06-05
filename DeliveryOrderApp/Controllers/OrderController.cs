@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using DeliveryOrdersApp.DataAccessLayer.Abstraction;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DeliveryOrdersApp.Controllers
 {
@@ -10,64 +7,47 @@ namespace DeliveryOrdersApp.Controllers
     [Route("[controller]")]
     public class OrderController : ControllerBase
     {
-        private readonly ILogger<OrderController> _logger;
+        private readonly IOrderRepository _orderRepository;
 
-        public OrderController(ILogger<OrderController> logger)
+        public OrderController(IOrderRepository orderRepository)
         {
-            _logger = logger;
+            _orderRepository = orderRepository;
         }
 
         [HttpGet]
-        public IEnumerable<Order> GetOrders()
+        public IActionResult GetOrders()
         {
-
-            return new List<Order>() 
-            {
-                new Order()
-                {
-                    Id = 1,
-                    SenderCity = "Югорск",
-                    SenderAddress = "Гастелло 15 - 32",
-                    RecipientCity = "SPB",
-                    RecipientAddress = "asd",
-                    CargoWeight = 123.45d,
-                    PickUpDate = DateTime.Now
-                },
-                new Order()
-                {
-                    Id = 2,
-                    SenderCity = "Югорск",
-                    SenderAddress = "Гастелло 15 - 32",
-                    RecipientCity = "SPB",
-                    RecipientAddress = "asd",
-                    CargoWeight = 123.45d,
-                    PickUpDate = DateTime.Now
-                }
-            };
-            //return Enumerable.Range(1, 5).Select(index => new Order
+            return Ok(_orderRepository.GetOrders());
+            //return new List<Order>() 
             //{
-            //    OrderNumber = new Guid("11111111-2222-3333-4444-555555555555"),
-            //    SenderCity = "Югорск",
-            //    SenderAddress = "Гастелло 15 - 32",
-            //    RecipientCity = "SPB",
-            //    RecipientAddress = "asd",
-            //    CargoWeight = 123.45d,
-            //    Date = DateTime.Now.AddDays(index)
-            //})
-            //.ToArray();
+            //    new Order()
+            //    {
+            //        Id = 1,
+            //        SenderCity = "Югорск",
+            //        SenderAddress = "Гастелло 15 - 32",
+            //        RecipientCity = "SPB",
+            //        RecipientAddress = "asd",
+            //        CargoWeight = 123.45d,
+            //        PickUpDate = DateTime.Now
+            //    },
+            //    new Order()
+            //    {
+            //        Id = 2,
+            //        SenderCity = "Югорск",
+            //        SenderAddress = "Гастелло 15 - 32",
+            //        RecipientCity = "SPB",
+            //        RecipientAddress = "asd",
+            //        CargoWeight = 123.45d,
+            //        PickUpDate = DateTime.Now
+            //    }
+            //};
         }
 
         [HttpPost]
-        public IEnumerable<Order> AddOrder(Order order)
+        public IActionResult AddOrder(Order order)
         {
-            var inputOrder = order;
-            return Enumerable.Range(1, 5).Select(index => new Order
-            {
-                SenderCity = "Югорск",
-                SenderAddress = "Гастелло 15 - 32",
-                //Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            _orderRepository.AddOrder(order);
+            return Ok();
         }
     }
 }

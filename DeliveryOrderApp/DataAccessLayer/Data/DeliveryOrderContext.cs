@@ -1,24 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace DeliveryOrdersApp.DAL.DBContext
+namespace DeliveryOrdersApp.DataAccessLayer.Data
 {
-    public class ApplicationContext : DbContext
+    public class DeliveryOrderContext : DbContext
     {
         public DbSet<Order> Orders { get; set; }
 
-        public ApplicationContext(DbContextOptions<ApplicationContext> options)
+        public DeliveryOrderContext(DbContextOptions<DeliveryOrderContext> options)
             : base(options)
         {
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("DefaultConnection");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Order>()
+                .ToTable("Orders")
                 .Property(p => p.Id)
                 .ValueGeneratedOnAdd();
         }
