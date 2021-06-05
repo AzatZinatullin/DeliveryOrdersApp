@@ -4,7 +4,7 @@ namespace DeliveryOrdersApp
 {
     public record Order
     {     
-        public Guid OrderNumber { get; set; }
+        public long Id { get; set; }
 
         public string SenderCity { get; set; }
 

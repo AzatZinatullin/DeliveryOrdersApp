@@ -15,5 +15,12 @@ namespace DeliveryOrdersApp.DAL.DBContext
         {
             optionsBuilder.UseSqlServer("DefaultConnection");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Order>()
+                .Property(p => p.Id)
+                .ValueGeneratedOnAdd();
+        }
     }
 }

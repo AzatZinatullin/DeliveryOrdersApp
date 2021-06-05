@@ -20,13 +20,12 @@ namespace DeliveryOrdersApp.Controllers
         [HttpGet]
         public IEnumerable<Order> GetOrders()
         {
-            var rng = new Random();
 
             return new List<Order>() 
             {
                 new Order()
                 {
-                    OrderNumber = new Guid("11111111-2222-3333-4444-555555555555"),
+                    Id = 1,
                     SenderCity = "Югорск",
                     SenderAddress = "Гастелло 15 - 32",
                     RecipientCity = "SPB",
@@ -36,7 +35,7 @@ namespace DeliveryOrdersApp.Controllers
                 },
                 new Order()
                 {
-                    OrderNumber = new Guid("11111111-2222-3333-4444-555555555555"),
+                    Id = 2,
                     SenderCity = "Югорск",
                     SenderAddress = "Гастелло 15 - 32",
                     RecipientCity = "SPB",
@@ -61,7 +60,7 @@ namespace DeliveryOrdersApp.Controllers
         [HttpPost]
         public IEnumerable<Order> AddOrder(Order order)
         {
-            var rng = new Random();
+            var inputOrder = order;
             return Enumerable.Range(1, 5).Select(index => new Order
             {
                 SenderCity = "Югорск",
