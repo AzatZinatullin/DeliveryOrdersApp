@@ -7,7 +7,7 @@ should be installed on your local machine.
 dotnet build  
 
 \# now build the client side using npm or yarn  
-cd ClientApp  
+go to 'ClientApp' folder  
 npm run build  
 cd ..  
   
