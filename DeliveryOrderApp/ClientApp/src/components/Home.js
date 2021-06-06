@@ -6,9 +6,9 @@ export class Home extends Component {
     render () {
         return (
             <div>
-                <h1>Hello, world!</h1>
-                <p>Welcome to your new single-page application, built with:</p>
-                <p>To help you get started, we have also set up:</p>
+                <p>This is a web application for accepting a delivery order.</p>
+                <p>To make an order please go to the <b>Make order</b> tab.</p>
+                <p>You can view the list of orders in the <b>Order list</b> tab.</p>
             </div>
         );
     }

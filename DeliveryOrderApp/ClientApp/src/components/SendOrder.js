@@ -1,40 +1,5 @@
 import React, { Component } from 'react';
 
-//export class SendOrder extends Component {
-//    static displayName = SendOrder.name;
-
-//    constructor() {
-//        super();
-//        this.state = { name: '', email: '' }
-//    }
-
-//    handleChange = event => {
-//        this.setState({ [event.target.name]: event.target.value })
-//    }
-//    handleSubmit = event => {
-//        event.preventDefault();
-//        console.log("User name : " + this.state.name)
-//        console.log("User Email : " + this.state.email)
-//        const url ="https://jsonplaceholder.typicode.com/users/"
-//        const data = { name: this.state.name, email: this.state.email }
-//        fetch(url, {
-//            method: 'POST',
-//            body: JSON.stringify(data), // data can be `string` or {object}!
-//            headers: { 'Content-Type': 'application/json' }
-//        })
-//        .then(res => res.json())
-//        .catch(error => console.error('Error: ', error))
-//        .then(response => console.log('Success: ', response)); }
-
-//    render(){
-//        return (
-//        <form onSubmit={this.handleSubmit}>
-//            <input type="text" name="name" onChange={this.handleChange} />
-//            <input type="email" name="email" onChange={this.handleChange} />
-//            <input type="submit" value="Add user" /> </form>)
-//    }
-//}
-
 export class SendOrder extends Component {
     static displayName = SendOrder.name;
 
@@ -56,8 +21,6 @@ export class SendOrder extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log("User name : " + this.state.name)
-        console.log("User Email : " + this.state.email)
         const url ="/order"
         const data = {
             senderCity: this.state.senderCity,
@@ -81,15 +44,35 @@ export class SendOrder extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="senderCity" onChange={this.handleChange} />
-                    <input type="text" name="senderAddress" onChange={this.handleChange} />
-                    <input type="text" name="recipientCity" onChange={this.handleChange} />
-                    <input type="text" name="recipientAddress" onChange={this.handleChange} />
-                    <input type="number" step="0.01" name="cargoWeight" onChange={this.handleChange} />
-                    <input type="date" name="pickUpDate" onChange={this.handleChange} />
+                <h2>Make order</h2>
+                <form className="form-group" onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                        <label>Sender city</label>
+                        <input type="text" className="form-control" name="senderCity" onChange={this.handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Sender address</label>
+                        <input type="text" className="form-control" name="senderAddress" onChange={this.handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Recipient city</label>
+                        <input type="text" className="form-control" name="recipientCity" onChange={this.handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Recipient address</label>
+                        <input type="text" className="form-control" name="recipientAddress" onChange={this.handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Cargo weight</label>
+                        <input type="number" className="form-control" step="0.01" name="cargoWeight" onChange={this.handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Pick up date</label>
+                        <input type="date" className="form-control" name="pickUpDate" onChange={this.handleChange} />
+                    </div >
 
-                    <input type="submit" value="Submit" />
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
                 </form>
             </div>
         );

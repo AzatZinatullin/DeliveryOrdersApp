@@ -14,37 +14,36 @@ export class FetchOrders extends Component {
 
     static renderOrdersTable(orders) {
         return (
-            <div>
+            <div>                
                 {orders.map(order =>
-                    <table className='table table-striped' aria-labelledby="tabelLabel">
-                        <thead>
-                            <tr key={order.id}>
-                                <td>Order number: {order.id}</td>
-                            </tr>
-                        </thead>
+                    <table className="table">
                         <tbody>
+                            <tr key={order.id}>
+                                <th scope="row">Order number</th>
+                                <td>{order.id}</td>
+                            </tr>
                             <tr>
-                                <td>Sender city</td>
+                                <th scope="row">Sender city</th>
                                 <td>{order.senderCity}</td>
                             </tr>
                             <tr>
-                                <td>Sender address</td>
+                                <th scope="row">Sender address</th>
                                 <td>{order.senderAddress}</td>
                             </tr>
                             <tr>
-                                <td>Recipient city</td>
+                                <th scope="row">Recipient city</th>
                                 <td>{order.recipientCity}</td>
                             </tr>
                             <tr>
-                                <td>Recipient address</td>
+                                <th scope="row">Recipient address</th>
                                 <td>{order.recipientAddress}</td>
                             </tr>
                             <tr>
-                                <td>Cargo weight</td>
+                                <th scope="row">Cargo weight</th>
                                 <td>{order.cargoWeight}</td>
                             </tr>
                             <tr>
-                                <td>Pick up date</td>
+                                <th scope="row">Pick up date</th>
                                 <td>{order.pickUpDate}</td>
                             </tr>
                         </tbody>
@@ -59,9 +58,13 @@ export class FetchOrders extends Component {
         ? <p><em>Loading...</em></p>
         : FetchOrders.renderOrdersTable(this.state.orders);
 
+        if (this.state.orders.length == 0) {
+            contents = 'No orders';
+        }
+
         return (
             <div>
-                <h1 id="tabelLabel" >Order list.</h1>
+                <h2 id="tabelLabel">Order list</h2>
                 {contents}
             </div>
         );
