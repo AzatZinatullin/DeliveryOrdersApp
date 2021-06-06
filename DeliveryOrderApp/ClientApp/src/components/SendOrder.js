@@ -44,31 +44,31 @@ export class SendOrder extends Component {
     render() {
         return (
             <div>
-                <h2>Make order</h2>
+                <h2>Make order</h2><br />
                 <form className="form-group" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label>Sender city</label>
-                        <input type="text" className="form-control" name="senderCity" onChange={this.handleChange} />
+                        <input type="text" className="form-control" name="senderCity" onChange={this.handleChange} required />
                     </div>
                     <div className="form-group">
                         <label>Sender address</label>
-                        <input type="text" className="form-control" name="senderAddress" onChange={this.handleChange} />
+                        <input type="text" className="form-control" name="senderAddress" onChange={this.handleChange} required />
                     </div>
                     <div className="form-group">
                         <label>Recipient city</label>
-                        <input type="text" className="form-control" name="recipientCity" onChange={this.handleChange} />
+                        <input type="text" className="form-control" name="recipientCity" onChange={this.handleChange} required />
                     </div>
                     <div className="form-group">
                         <label>Recipient address</label>
-                        <input type="text" className="form-control" name="recipientAddress" onChange={this.handleChange} />
+                        <input type="text" className="form-control" name="recipientAddress" onChange={this.handleChange} required />
                     </div>
                     <div className="form-group">
                         <label>Cargo weight</label>
-                        <input type="number" className="form-control" step="0.01" name="cargoWeight" onChange={this.handleChange} />
+                        <input type="number" className="form-control" step="0.01" name="cargoWeight" onChange={this.handleChange} required />
                     </div>
                     <div className="form-group">
                         <label>Pick up date</label>
-                        <input type="date" className="form-control" name="pickUpDate" onChange={this.handleChange} />
+                        <input type="date" className="form-control" name="pickUpDate" onChange={this.handleChange} required />
                     </div >
 
                     <button type="submit" class="btn btn-primary">Submit</button>

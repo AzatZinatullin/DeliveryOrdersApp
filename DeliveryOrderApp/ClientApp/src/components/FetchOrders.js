@@ -14,9 +14,9 @@ export class FetchOrders extends Component {
 
     static renderOrdersTable(orders) {
         return (
-            <div>                
-                {orders.map(order =>
-                    <table className="table">
+            <div>
+                {orders.map(order =>                    
+                    <table className="table"><br />
                         <tbody>
                             <tr key={order.id}>
                                 <th scope="row">Order number</th>
@@ -44,7 +44,15 @@ export class FetchOrders extends Component {
                             </tr>
                             <tr>
                                 <th scope="row">Pick up date</th>
-                                <td>{order.pickUpDate}</td>
+                                <td>{new Date(order.pickUpDate).toLocaleString(
+                                        'en-US',
+                                        {
+                                            year: 'numeric',
+                                            month: 'long',
+                                            day: 'numeric'
+                                        }                                        
+                                    )}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
