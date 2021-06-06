@@ -46,8 +46,11 @@ namespace DeliveryOrdersApp.Controllers
         [HttpPost]
         public IActionResult AddOrder(Order order)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             _orderRepository.AddOrder(order);
-            return Ok();
+            return Ok(order);
         }
     }
 }

@@ -18,8 +18,8 @@ export class FetchOrders extends Component {
                 {orders.map(order =>
                     <table className='table table-striped' aria-labelledby="tabelLabel">
                         <thead>
-                            <tr key={order.orderNumber}>
-                                <td>Order number: {order.orderNumber}</td>
+                            <tr key={order.id}>
+                                <td>Order number: {order.id}</td>
                             </tr>
                         </thead>
                         <tbody>

@@ -86,7 +86,7 @@ export class SendOrder extends Component {
                     <input type="text" name="senderAddress" onChange={this.handleChange} />
                     <input type="text" name="recipientCity" onChange={this.handleChange} />
                     <input type="text" name="recipientAddress" onChange={this.handleChange} />
-                    <input type="number" name="cargoWeight" onChange={this.handleChange} />
+                    <input type="number" step="0.01" name="cargoWeight" onChange={this.handleChange} />
                     <input type="date" name="pickUpDate" onChange={this.handleChange} />
 
                     <input type="submit" value="Submit" />
