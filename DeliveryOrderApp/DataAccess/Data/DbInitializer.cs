@@ -1,4 +1,4 @@
-﻿namespace DeliveryOrdersApp.DataAccessLayer.Data
+﻿namespace DeliveryOrdersApp.DataAccess.Data
 {
     public static class DbInitializer
     {

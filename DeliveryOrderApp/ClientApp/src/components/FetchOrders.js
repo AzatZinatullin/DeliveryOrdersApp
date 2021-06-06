@@ -16,7 +16,7 @@ export class FetchOrders extends Component {
         return (
             <div>
                 {orders.map(order =>                    
-                    <table className="table"><br />
+                    <table className="table">
                         <tbody>
                             <tr key={order.id}>
                                 <th scope="row">Order number</th>

@@ -39,12 +39,14 @@ export class SendOrder extends Component {
         .then(res => res.json())
         .catch(error => console.error('Error: ', error))
         .then(response => console.log('Success: ', response)); 
+
+        alert("The order has been created");
     }
 
     render() {
         return (
             <div>
-                <h2>Make order</h2><br />
+                <h2>Make order</h2>
                 <form className="form-group" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label>Sender city</label>
@@ -71,7 +73,7 @@ export class SendOrder extends Component {
                         <input type="date" className="form-control" name="pickUpDate" onChange={this.handleChange} required />
                     </div >
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
 
                 </form>
             </div>

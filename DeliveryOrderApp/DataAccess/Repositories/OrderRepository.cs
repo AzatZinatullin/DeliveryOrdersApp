@@ -1,9 +1,9 @@
-﻿using DeliveryOrdersApp.DataAccessLayer.Data;
-using DeliveryOrdersApp.DataAccessLayer.Abstraction;
+﻿using DeliveryOrdersApp.DataAccess.Data;
+using DeliveryOrdersApp.DataAccess.Abstraction;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DeliveryOrdersApp.DataAccessLayer.Repositories
+namespace DeliveryOrdersApp.DataAccess.Repositories
 {
     public class OrderRepository : IOrderRepository
     {

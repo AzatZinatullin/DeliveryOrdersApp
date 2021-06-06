@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DeliveryOrdersApp.DataAccessLayer.Abstraction
+namespace DeliveryOrdersApp.DataAccess.Abstraction
 {
     public interface IOrderRepository
     {

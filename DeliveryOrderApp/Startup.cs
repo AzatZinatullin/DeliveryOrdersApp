@@ -1,6 +1,6 @@
-using DeliveryOrdersApp.DataAccessLayer.Data;
-using DeliveryOrdersApp.DataAccessLayer.Abstraction;
-using DeliveryOrdersApp.DataAccessLayer.Repositories;
+using DeliveryOrdersApp.DataAccess.Data;
+using DeliveryOrdersApp.DataAccess.Abstraction;
+using DeliveryOrdersApp.DataAccess.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;

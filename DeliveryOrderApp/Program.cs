@@ -1,4 +1,4 @@
-using DeliveryOrdersApp.DataAccessLayer.Data;
+using DeliveryOrdersApp.DataAccess.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

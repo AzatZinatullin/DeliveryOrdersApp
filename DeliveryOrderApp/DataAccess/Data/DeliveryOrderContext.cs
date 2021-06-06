@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace DeliveryOrdersApp.DataAccessLayer.Data
+namespace DeliveryOrdersApp.DataAccess.Data
 {
     public class DeliveryOrderContext : DbContext
     {
