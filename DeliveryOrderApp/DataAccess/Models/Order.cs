@@ -7,22 +7,22 @@ namespace DeliveryOrdersApp
     {     
         public long Id { get; set; }
 
-        [Required(ErrorMessage = "Укажите город отправителя")]
+        [Required(ErrorMessage = "Sender city is required")]
         public string SenderCity { get; set; }
 
-        [Required(ErrorMessage = "Укажите адрес отправителя")]
+        [Required(ErrorMessage = "Sender address is required")]
         public string SenderAddress { get; set; }
 
-        [Required(ErrorMessage = "Укажите город получателя")]
+        [Required(ErrorMessage = "Recipient city is required")]
         public string RecipientCity { get; set; }
 
-        [Required(ErrorMessage = "Укажите адрес отправителя")]
+        [Required(ErrorMessage = "Recipient address is required")]
         public string RecipientAddress { get; set; }
 
-        [Required(ErrorMessage = "Укажите вес груза")]
+        [Required(ErrorMessage = "Cargo weight is required")]
         public double CargoWeight { get; set; }
 
-        [Required(ErrorMessage = "Укажите дату забора груза")]
+        [Required(ErrorMessage = "Pick up date is required")]
         public DateTime PickUpDate { get; set; }
     }
 }
